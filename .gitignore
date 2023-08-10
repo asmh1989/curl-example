@@ -1,0 +1,5 @@
+result/
+*.csv
+*.txt
+*.smi
+*.csv/
