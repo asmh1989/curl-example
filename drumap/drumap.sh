@@ -14,7 +14,7 @@ if [ -f "$1" ]; then
     input=$1
 fi
 
-data="{\"authenticity_token\":\"xAa59sbj+571sp0Q5VNJ9ilETMl0WWIDILOo04YC8bD4GP1g3f7hmLxFdMpO/AbeILRBW1H3cMU49pk5NBJsAA==\",\"data\":\"$(cat $input | sed 's/\t/\\t/g' | sed ':label;N;s/\n/\\n/;b label')\"}"
+data="{\"authenticity_token\":\"xAa59sbj+571sp0Q5VNJ9ilETMl0WWIDILOo04YC8bD4GP1g3f7hmLxFdMpO/AbeILRBW1H3cMU49pk5NBJsAA==\",\"data\":\"$(cat $input | sed 's/\\/\\\\/g' | sed 's/\t/\\t/g' | sed ':label;N;s/\n/\\n/;b label')\"}"
 
 mkdir -p tmp
 # echo -e "$data"

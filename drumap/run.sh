@@ -11,7 +11,7 @@ for item in $(ls $DATA); do
     mkdir -p result
     for input in $(ls *.txt); do
         if [ ! -f result/$input.csv ]; then
-            echo "start $input to download drumap .."
+            echo "start $(item) $input to download drumap .."
             bash $script $input result/$input.csv
         else
             echo "$input result already exist!"
